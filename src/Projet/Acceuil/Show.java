@@ -413,7 +413,7 @@ public class Show
 					
 					if(i.equals(Ooc.compte.size()))
 					{
-						System.out.println(" Sorry !! \n Username not invalid, back to menu and try again ...\n ");
+						System.out.println(" Sorry !! \n Username not valide, back to menu and try again ...\n ");
 						Rep = 2;
 					}
 					
