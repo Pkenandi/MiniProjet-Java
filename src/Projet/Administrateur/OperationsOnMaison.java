@@ -2,6 +2,7 @@ package Projet.Administrateur;
 
 import java.util.Vector;
 
+import Projet.Acceuil.color;
 import Projet.Administrateur.Maisons.Immeuble;
 import Projet.Administrateur.Maisons.Maison;
 import Projet.Administrateur.Maisons.Villa;
@@ -54,7 +55,7 @@ public class OperationsOnMaison implements HouseManegement
 		
 		if(maison.isEmpty())
 		{
-			System.out.println("\t Empty Array ");
+			System.out.println(color.red+" Empty Array ! "+color.reset);
 		}else
 		{
 			for( i = 0; i < maison.size(); i++)
@@ -76,7 +77,7 @@ public class OperationsOnMaison implements HouseManegement
 			
 			if(i.equals(maison.size()))
 			{
-				System.out.println("\t  Id not found !");
+				System.out.println(color.red+"\t  Id not  found "+color.reset);
 			}
 			
 		}
@@ -93,7 +94,7 @@ public class OperationsOnMaison implements HouseManegement
 		
 		if(maison.isEmpty())
 		{
-			System.out.println(" Empty Array or Id not found !");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else
 		{
 			for(i = 0; i < maison.size(); i++)
@@ -101,14 +102,14 @@ public class OperationsOnMaison implements HouseManegement
 				if(maison.get(i).getId().equals(id))
 				{
 					maison.removeElementAt(i);
-					System.out.println(" Well deleted :/");
+					System.out.println(color.green+"\t Well deleted :/"+color.reset);
 					break;
 				}
 			}
 			
 			if(i == maison.size())
 			{
-				System.out.println("\t  Id not found !");
+				System.out.println(color.red+"\t Not found ! "+color.reset);
 			}
 		}
 		
@@ -124,14 +125,14 @@ public class OperationsOnMaison implements HouseManegement
 		
 		if(maison.isEmpty())
 		{
-			System.out.println(" Empty Array ");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else
 		{
 			for(i = 0; i < maison.size(); i++)
 			{
 				if(maison.get(i).getId().equals(id))
 				{
-					System.out.println(maison.get(i).toString());
+					System.out.println( color.green+""+maison.get(i).toString()+""+color.reset);
 					break;
 				}
 				
@@ -139,7 +140,7 @@ public class OperationsOnMaison implements HouseManegement
 			
 			if(i == maison.size())
 			{
-				System.out.println("\t  Id not found !");
+				System.out.println(color.red+"\t  Not found ! "+color.reset);
 			}
 		}
 		
@@ -150,7 +151,7 @@ public class OperationsOnMaison implements HouseManegement
 	{
 		if(maison.isEmpty())
 		{
-			System.out.println(" Empty Array ");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else {
 			for(int i = 0; i < maison.size(); i++)
 				System.out.println(maison.get(i).toString());

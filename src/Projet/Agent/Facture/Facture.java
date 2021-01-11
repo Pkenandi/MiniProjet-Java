@@ -52,7 +52,8 @@ public class Facture
 
 	@Override
 	public String toString() {
-		return "Facture  \n   [ Numero : " + Numero + ", Type : " + Type + ", montant : " + montant + ", delai : " + delai + " ]";
+		return "Facture   [\n  Numero : " + Numero + ",\n  Type : " + Type + 
+				",\n  Montant : " + montant + ",\n  Echeance : " + delai + "\n\t  ]";
 	}
 
 }

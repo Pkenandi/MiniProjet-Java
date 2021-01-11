@@ -1,6 +1,8 @@
 package Projet.Administrateur;
 
 import java.util.Vector;
+
+import Projet.Acceuil.color;
 import Projet.Administrateur.Comptes.Compte;
 
 interface GestionCompte
@@ -46,7 +48,7 @@ public class OperationsOnComptes implements GestionCompte{
 		
 		if (compte.isEmpty()) 
 		{
-			System.out.println(" Empty Array ");
+			System.out.println(color.red+"\t  Empty Array "+color.reset);
 		} else 
 		{
 			for ( i = 0; i < compte.size(); i++) 
@@ -54,14 +56,14 @@ public class OperationsOnComptes implements GestionCompte{
 				if (compte.get(i).getId().equals(id)) 
 				{
 					compte.set(i, new Compte().Saisie());
-					System.out.println("\t well updated :/ ");
+					System.out.println(color.green+"\t  well updated  "+color.reset);
 					break;
 				}
 
 			}
 			
 			if(i.equals(compte.size()))
-				System.out.println(" Id not found !");
+				System.out.println(color.red + " Id not found !" +color.reset);
 		}
 		
 		return compte;
@@ -75,20 +77,20 @@ public class OperationsOnComptes implements GestionCompte{
 		
 		if (compte.isEmpty()) 
 		{
-			System.out.println(" Empty Array ");
+			System.out.println(color.red+ "\t  Empty Array " + color.reset);
 		} else 
 		{
 			for ( i = 0; i < compte.size(); i++) 
 			{
 				if (compte.get(i).getId().equals(id)) 
 				{
-					System.out.println(compte.get(i).toString());
+					System.out.println( color.green+""+compte.get(i).toString()+""+color.reset);
 					break;
 				}
 			}
 			
 			if(i.equals(compte.size()))
-				System.out.println(" Id not found !");
+				System.out.println(color.red+"\t  Id not found !"+color.reset);
 		}
 	}
 	
@@ -98,7 +100,7 @@ public class OperationsOnComptes implements GestionCompte{
 	{
 		if(compte.isEmpty())
 		{
-			System.out.println(" Empty Array ! ");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else
 		{
 			for(int i = 0; i < compte.size(); i++ )
@@ -116,7 +118,7 @@ public class OperationsOnComptes implements GestionCompte{
 		
 		if(compte.isEmpty())
 		{
-			System.out.println(" Empty Array ! ");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else
 		{
 			for( i = 0; i < compte.size(); i++ )
@@ -124,13 +126,13 @@ public class OperationsOnComptes implements GestionCompte{
 				if(compte.get(i).getId().equals(id))
 				{
 					compte.removeElementAt(i);
-					System.out.println("\t Well deleted :/ ");
+					System.out.println(color.green+"\t  Well deleted  "+color.reset);
 					break;
 				}
 			}
 			
 			if(i.equals(compte.size()))
-				System.out.println(" Id not found !");
+				System.out.println(color.red+"\t  Id not found !"+color.reset);
 		}
 		
 		return compte;

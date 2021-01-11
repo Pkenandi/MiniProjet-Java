@@ -2,6 +2,7 @@ package Projet.Agent;
 
 import java.util.Vector;
 
+import Projet.Acceuil.color;
 import Projet.Agent.Contract.Contract;
 
 
@@ -51,7 +52,7 @@ public class OperationsOnContract implements ContractManagement{
 		Integer i;
 		
 		if (contract.isEmpty()) {
-			System.out.println(" Aucun contract établit ");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		} else 
 		{
 			for (i = 0; i < contract.size(); i++) 
@@ -59,6 +60,7 @@ public class OperationsOnContract implements ContractManagement{
 				if (contract.get(i).getNumContrat().equals(Num)) 
 				{
 					contract.set(i, new Contract().Saisie());
+					System.out.println(color.purple+"\t  Well updated  "+color.reset);
 					break;
 				}
 
@@ -66,7 +68,7 @@ public class OperationsOnContract implements ContractManagement{
 			
 			if(i.equals(contract.size()))
 			{
-				System.out.println(" Num not found ");
+				System.out.println(color.red+"\t  Not found in Array ! "+color.reset);
 			}
 		}
 
@@ -81,21 +83,21 @@ public class OperationsOnContract implements ContractManagement{
 		
 		if (contract.isEmpty()) 
 		{
-			System.out.println(" Aucun contrat edité !");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		} else 
 		{
 			for ( i = 0; i < contract.size(); i++) 
 			{
 				if (contract.get(i).getNumContrat().equals(Num)) 
 				{
-					System.out.println(contract.get(i).toString());
+					System.out.println(color.purple+contract.get(i).toString()+color.reset);
 					break;
 				}
 			}
 			
 			if(i.equals(contract.size()))
 			{
-				System.out.println(" Num not found ");
+				System.out.println(color.red+"\t  Not found in Array ! "+color.reset);
 			}
 		}
 	}
@@ -104,10 +106,10 @@ public class OperationsOnContract implements ContractManagement{
 
 	public void displayAllContract() {
 		if (contract.isEmpty()) {
-			System.out.println(" Aucun contrat à afficher !!");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		} else {
 			for (int i = 0; i < contract.size(); i++) {
-				System.out.println(contract.get(i).toString());
+				System.out.println(color.purple+contract.get(i).toString()+color.reset);
 			}
 		}
 	}
@@ -119,20 +121,21 @@ public class OperationsOnContract implements ContractManagement{
 		Integer i;
 		
 		if (contract.isEmpty())
-			System.out.println(" Aucun contract existant !");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		else {
-			for ( i = 0; i < contract.size(); i++) {
+			for ( i = 0; i < contract.size(); i++) 
+			{
 				if (contract.get(i).getNumContrat().equals(num)) 
 				{
 					contract.removeElementAt(i);
-					System.out.println("\t Well deleted :/ ");
+					System.out.println(color.purple+"\t  Well deleted :/ "+color.reset);
 					break;
 				}
 			}
 			
 			if(i.equals(contract.size()))
 			{
-				System.out.println(" Code not found ");
+				System.out.println(color.red+"\t     Not found in Array ! "+color.reset);
 			}
 		}
 

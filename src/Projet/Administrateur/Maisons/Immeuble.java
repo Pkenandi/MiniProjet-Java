@@ -19,7 +19,7 @@ enum Appart
 	}
 }
 
-enum Categorie
+enum Categorie // Categorie de l'immeuble
 {
 	R("Residentielle"),Ad(" Administrative"),Ens(" Enseignement"),Com("Commerciale");
 	
@@ -55,15 +55,15 @@ public class Immeuble extends Maison {
 		super(id, adresse, status, type, nombrePieces);
 		this.nombreEtages = nombreEtages;
 		
-		if(categorie.toUpperCase().equals("R"))
+		if(categorie.toLowerCase().equals("res"))
 		{
 			this.categorie = Categorie.R.getCat();
 		}else
-			if(categorie.toUpperCase().equals("AD"))
+			if(categorie.toLowerCase().equals("ad"))
 				this.categorie = Categorie.Ad.getCat();
-			else if(categorie.toUpperCase().equals("ENS"))
+			else if(categorie.toLowerCase().equals("ens"))
 				this.categorie = Categorie.Ens.getCat();
-			else if(categorie.toUpperCase().equals("COM"))
+			else if(categorie.toLowerCase().equals("com"))
 				this.categorie = Categorie.Com.getCat();
 		
 		this.nombreAppart = nombreAppart;
@@ -79,10 +79,10 @@ public class Immeuble extends Maison {
 	{
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print(" Id :");
+		System.out.print(" Identifiant :");
 		super.Id = sc.nextInt();
 		sc.nextLine();
-		System.out.print(" Adresse : ");
+		System.out.print(" < Adresse > ");
 		super.adresse = new Adresse();
 		adresse.Saisie();
 		System.out.print(" Status ( Libre | Occupé ) : ");
@@ -93,40 +93,40 @@ public class Immeuble extends Maison {
 		System.out.print(" Nombre etages : ");
 		this.nombreEtages = sc.nextInt(); 
 		sc.nextLine();
-		System.out.print(" Categorie ( R | Ad | Ens | Com) : "); // R => residentielle; Ad=> administrative; Ens=> enseignement; Com=>Commerciale
+		System.out.print(" Categorie [ \n\tRes : Residentielle \n\tAd : Administrative \n\tEns : Enseignement \n\tCom : Commerciale \n\t] => :  ");
 		this.categorie = sc.nextLine();
 		
-		if(categorie.toUpperCase().equals("R"))
+		if(categorie.toLowerCase().equals("res"))
 		{
 			this.categorie = Categorie.R.getCat();
 		}else
-			if(categorie.toUpperCase().equals("AD"))
+			if(categorie.toLowerCase().equals("ad"))
 				this.categorie = Categorie.Ad.getCat();
-			else if(categorie.toUpperCase().equals("ENS"))
+			else if(categorie.toLowerCase().equals("ens"))
 				this.categorie = Categorie.Ens.getCat();
-			else if(categorie.toUpperCase().equals("COM"))
+			else if(categorie.toLowerCase().equals("com"))
 				this.categorie = Categorie.Com.getCat();
 		
-		System.out.print(" Nombre Appartement : ");
+		System.out.print(" Nombre appartement : ");
 		this.nombreAppart = sc.nextInt();
 		sc.nextLine();
 		
-		System.out.print(" Type Appart ( N | M ) : "); //N => Non meublé; M => Meublé
+		System.out.print(" Type Appart [ \n\t N : non meublé \n\t M : meublé \n\t ] => : "); 
 		if(sc.nextLine().toUpperCase().equals("M"))
 			this.typeAppart = Appart.M.getap();
 		else
 			this.typeAppart = Appart.N.getap();
 		
-		return new Immeuble(Id, adresse, Status, super.Type, nombreAppart, nombreEtages, categorie, nombreAppart, typeAppart);
+		return new Immeuble(Id, adresse, Status, super.Type, super.nombrePieces , nombreEtages, categorie, nombreAppart, typeAppart);
 		
 	}
 
 	@Override
 	public String toString() {
-		return " [ Immeuble ]\n Nombre Etages <" + nombreEtages + ">, \n Categorie : " 
+		return "  Immeuble    [ \n Nombre Etages <" + nombreEtages + ">, \n Categorie : " 
 					+ categorie + ",\n Nombre Appartement  : " + nombreAppart
 				    + ",\n Type Appartement : " + typeAppart + ",\n Id : " 
 				    + Id + ",\n  " + adresse.toString() + ",\n Status : " + Status
-				    + ",\n Nombre Pieces : " + nombrePieces + "\n ]";
+				    + ",\n Nombre Pieces : " + nombrePieces + "\n\t  ]";
 	}
 }

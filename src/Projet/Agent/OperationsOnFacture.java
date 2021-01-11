@@ -2,6 +2,7 @@ package Projet.Agent;
 
 import java.util.Vector;
 
+import Projet.Acceuil.color;
 import Projet.Agent.Facture.Facture;
 
 
@@ -53,7 +54,7 @@ public class OperationsOnFacture implements BillsManagement
 		
 		if(facture.isEmpty())
 		{
-			System.out.println(" Aucune facture editée !");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else
 		{
 			for( i = 0; i < facture.size(); i++)
@@ -61,13 +62,14 @@ public class OperationsOnFacture implements BillsManagement
 				if(facture.get(i).getNumero().equals(Num))
 				{
 					facture.set(i, new Facture().Saisie());
+					System.out.println(color.purple+"\t  Well updated :/  "+color.reset);
 					break;
 				}
 			}
 			
 			if(i.equals(facture.size()))
 			{
-				System.out.println(" Num not found ");
+				System.out.println(color.red+"\t  Not found in Array ! "+color.reset);
 			}
 		}
 		
@@ -81,21 +83,21 @@ public class OperationsOnFacture implements BillsManagement
 		
 		if(facture.isEmpty())
 		{
-			System.out.println(" Aucune facture editée !");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else
 		{
 			for( i = 0; i < facture.size(); i++)
 			{
 				if(facture.get(i).getNumero().equals(Num))
 				{
-					System.out.println(facture.get(i).toString());
+					System.out.println(color.purple+facture.get(i).toString()+color.reset);
 					break;
 				}
 			}
 			
 			if(i.equals(facture.size()))
 			{
-				System.out.println(" Num not found ");
+				System.out.println(color.red+"\t  Not found in Array ! "+color.reset);
 			}
 		}
 		
@@ -107,12 +109,12 @@ public class OperationsOnFacture implements BillsManagement
 	{
 		if(facture.isEmpty())
 		{
-			System.out.println(" Aucune facture existante !");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else
 		{
 			for(int i = 0; i < facture.size(); i++)
 			{
-				System.out.println(facture.get(i).toString());
+				System.out.println(color.purple+facture.get(i).toString()+color.reset);
 			}
 		}
 	}
@@ -125,7 +127,7 @@ public class OperationsOnFacture implements BillsManagement
 		
 		if(facture.isEmpty())
 		{
-			System.out.println(" Aucune facture editée !");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else
 		{
 			for( i = 0; i < facture.size(); i++)
@@ -133,14 +135,14 @@ public class OperationsOnFacture implements BillsManagement
 				if(facture.get(i).getNumero().equals(Num))
 				{
 					facture.removeElementAt(i);
-					System.out.println(" Suppression effectuer avec succès !");
+					System.out.println(color.purple+"\t  Well deleted !"+color.reset);
 					break;
 				}
 			}
 			
 			if(i.equals(facture.size()))
 			{
-				System.out.println(" Num not found ");
+				System.out.println(color.red+"\t  Not found in Array ! "+color.reset);
 			}
 		}
 		

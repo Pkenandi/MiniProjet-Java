@@ -44,11 +44,11 @@ public class Contract
 		this.codeClient = codeClient;
 	}
 
-	public Contract(Integer numContrat, Integer codeClient, double prixLoyer, String reglement) 
+	public Contract(Integer numContrat, Integer codeClient, double pL, String reglement) 
 	{
 		this.numContrat = numContrat;
 		Reglement = reglement;
-		this.prixLoyer = prixLoyer;
+		this.prixLoyer = pL;
 		this.codeClient = codeClient;
 			
 	}
@@ -79,11 +79,9 @@ public class Contract
 	@Override
 	public String toString() 
 	{
-		return "Contract \n   [ numero : " + this.numContrat + ", Loyer : " + this.prixLoyer + ", Reglement : <" + this.Reglement
-				+ "> , code du client : " + this.codeClient + " ]";
+		return " Contract    [\n   numero : " + this.numContrat + ",\n   Loyer : " + this.prixLoyer + 
+				",\n   Reglement : <" + this.Reglement+ "> ,\n   code du client : " + this.codeClient + " \n\t ] ";
 	}
 
 	
-	
-
 }

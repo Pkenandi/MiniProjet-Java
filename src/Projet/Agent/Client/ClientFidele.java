@@ -39,7 +39,7 @@ public class ClientFidele extends Client
 		System.out.print(" Telephone : ");
 		this.Tel = sc.nextInt();
 		sc.nextLine();
-		super.Categorie = " Fidele ";
+		super.Categorie = "fidele";
 		this.Remise = 0.7;
 		
 		return new ClientFidele(super.Code, super.Nom, super.Prenom, super.Tel, super.Categorie, this.Remise);
@@ -47,9 +47,9 @@ public class ClientFidele extends Client
 
 	@Override
 	public String toString() {
-		return "Client Fidele [\n Remise = " + Remise + ",\n Code : " + Code 
-					+ ",\n Nom : " + Nom + ",\n Prenom : " + Prenom + ",\n Tel : "
-					+ Tel + ",\n Categorie=" + Categorie + "]";
+		return "Client Fidele [\n Code : " + Code + ",\n Nom : " + Nom + ","
+				    + "\n Prenom : " + Prenom + ",\n Tel : "
+					+ Tel + ",\n Categorie=" + Categorie + " \n]";
 	}
 
 }

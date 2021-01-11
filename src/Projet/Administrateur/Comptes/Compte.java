@@ -66,14 +66,14 @@ public class Compte
 		System.out.print(" Id compte : ");
 		this.Id = sc.nextInt();
 		sc.nextLine();
-		System.out.print(" Nom de l'utilisateur : ");
+		System.out.print(" User name : ");
 		this.nom = sc.nextLine();
-		System.out.print(" Prenom de l'utilisateur : ");
+		System.out.print(" Prenom  : ");
 		this.prenom = sc.nextLine();
 		System.out.print(" Tel : ");
 		this.Tel = sc.nextInt(); 
 	    sc.nextLine();
-		System.out.print(" Type compte ( Admin /Gr ) : ");
+		System.out.print(" Type compte ( Admin | gerant ) : ");
 		this.type = sc.nextLine();
 		
 		return new Compte(this.Id,this.nom,this.prenom,this.Tel,this.type);
@@ -81,7 +81,8 @@ public class Compte
 
 	@Override
 	public String toString() {
-		return "Compte [ Id Compte : " + Id + ", Nom : " + nom + ", Prenom : " + prenom + ", Tel : " + Tel + ", Type compte : " + type + " ] ";
+		return "Compte [\n\tId Compte : " + Id + ",\n\tNom : " + nom + ",\n\tPrenom : " 
+									+ prenom + ",\n\tTel : " + Tel + ",\n\tType compte : " + type + " \n\t ] ";
 	}
 	
 	

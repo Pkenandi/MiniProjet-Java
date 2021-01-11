@@ -28,7 +28,7 @@ public class Villa extends Maison {
 		System.out.println(" Id :");
 		super.Id = sc.nextInt();
 		sc.nextLine();
-		System.out.println(" Adresse : ");
+		System.out.println(" < Adresse > ");
 		super.adresse = new Adresse();
 		adresse.Saisie();
 		System.out.println(" Status ( Libre | Occupé ) : ");
@@ -37,9 +37,9 @@ public class Villa extends Maison {
 		super.nombrePieces = sc.nextInt();
 		sc.nextLine();
 		super.Type = " Villa ";
-		System.out.println(" taille du jardin : ");
+		System.out.println(" Dimension du jardin : ");
 		this.jardinTaille = sc.nextDouble();
-		System.out.println(" Taille de la surface : ");
+		System.out.println(" Taille de l'espace : ");
 		this.tailleEspace = sc.nextDouble();
 		
 		return new Villa(super.Id,super.adresse,super.Status, super.Type,super.nombrePieces,this.jardinTaille,this.tailleEspace);
@@ -47,9 +47,9 @@ public class Villa extends Maison {
 
 	@Override
 	public String toString() {
-		return " Villa :\n[\n  Id : " + super.Id +",\n " + super.adresse.toString() 
+		return " Villa    [\n  Identifiant : " + super.Id +",\n " + super.adresse.toString() 
 				+"\n Type : <"+ super.Type + ">\n  Status :  <" + super.Status +"> "
-				+ "possedant un jardin de " + this.jardinTaille + "m et une surface de " + this.tailleEspace+"m² \n  "
+				+ "\n possedant un jardin de " + this.jardinTaille + "m et une surface de " + this.tailleEspace+"m² "
 				+ "\n  avec <" + super.nombrePieces+" > Pieces \n]";
 	}
 	

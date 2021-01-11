@@ -38,11 +38,11 @@ class Adresse
 	public Adresse Saisie()
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.println("\t Ville : ");
+		System.out.print("\t Ville : ");
 		this.Ville = sc.nextLine();
-		System.out.println("\t Gouvernorat : ");
+		System.out.print("\t Gouvernorat : ");
 		this.Gouvernorat = sc.nextLine();
-		System.out.println("\t Cité : ");
+		System.out.print("\t Cité : ");
 		this.Cite = sc.nextLine();
 		
 		return new Adresse(this.Ville, this.Gouvernorat,this.Cite);
@@ -50,7 +50,7 @@ class Adresse
 	
 	public String toString()
 	{
-		return " Adresse : \n\t  Ville de " + this.getVille() + " dans le gouvernorat de " + this.getGouv() + " Cité " + this.getCite() ;
+		return " Adresse : \n\t Située à " + this.getVille() + " dans le gouvernorat de " + this.getGouv() + " Cité " + this.getCite() ;
 	}
 	
 }
@@ -101,22 +101,7 @@ public class Maison {
 			return new Villa().Saisie();
 		}else
 			return null;
-		/*System.out.println(" Id :");
-		this.Id = sc.nextInt();
-		sc.nextLine();
-		System.out.println(" Adresse : ");
-		this.adresse = new Adresse();
-		adresse.Saisie();
-		System.out.println(" Status ( Libre | Occupé ) : ");
-		this.Type = sc.nextLine();
-		System.out.println(" Nombre des pieces :  ");
-		this.nombrePieces = sc.nextInt();
-		this.Status = sc.nextLine();
-		System.out.println(" Type ( Immeuble | Villa ) : ");
-		if(sc.nextLine().toLowerCase().equals("immeuble"))
-			
-		
-		return new Maison(Id, this.adresse, Status, Type, nombrePieces);*/
+
 	}
 
 	@Override

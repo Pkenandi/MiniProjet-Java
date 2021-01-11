@@ -2,6 +2,8 @@ package Projet.Agent;
 
 import java.io.*;
 import java.util.*;
+
+import Projet.Acceuil.color;
 import Projet.Agent.Client.Client;
 import Projet.Agent.Client.ClientFidele;
 import Projet.Agent.Client.ClientRare;
@@ -55,7 +57,7 @@ public class OperationsOnClient implements ClientManagement {
 		
 		if(client.isEmpty())
 		{
-			System.out.println("  Impossible to update ");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else
 		{
 			for( i = 0; i < client.size(); i++)
@@ -69,7 +71,7 @@ public class OperationsOnClient implements ClientManagement {
 					}else if(client.get(i).getCategorie().toLowerCase().equals("rare"))
 					{
 						client.set(i, new ClientRare().Saisie());
-						System.out.println("\n\t Modificiation effectuer avec succès :/ ");
+						System.out.println(color.purple+"\n\t  Well updated  :/ "+color.reset);
 						break;
 					}
 				}
@@ -77,7 +79,7 @@ public class OperationsOnClient implements ClientManagement {
 			
 			if(i.equals(client.size()))
 			{
-				System.out.println(" Code not found ");
+				System.out.println(color.red+"\t  Not found in Array ! "+color.reset);
 			}
 			
 		}
@@ -90,12 +92,12 @@ public class OperationsOnClient implements ClientManagement {
 	{
 		if(client.isEmpty())
 		{
-			System.out.println(" Le tableau est vide !!!");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else
 		{
 			for(int i = 0; i < client.size(); i++)
 			{
-				System.out.println(client.get(i).toString()+"\n ");
+				System.out.println(color.purple+""+client.get(i).toString()+"\n "+color.reset);
 			}
 		}
 	}
@@ -106,21 +108,21 @@ public class OperationsOnClient implements ClientManagement {
 		
 		if(client.isEmpty())
 		{
-			System.out.println(" Aucune client existant !");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else
 		{
 			for( i = 0; i < client.size(); i++)
 			{
 				if(client.get(i).getCode().equals(Code))
 				{
-					System.out.println(client.get(i).toString());
+					System.out.println(color.purple+client.get(i).toString()+color.reset);
 					break;
 				}
 			}
 			
 			if(i.equals(client.size()))
 			{
-				System.out.println(" Code not found ");
+				System.out.println(color.red+"\t  Not found in Array ! "+color.reset);
 			}
 		}
 		
@@ -134,7 +136,7 @@ public class OperationsOnClient implements ClientManagement {
 		
 		if(client.isEmpty())
 		{
-			System.out.println(" Tableau vide !!");
+			System.out.println(color.red+"\t  Empty Array ! "+color.reset);
 		}else 
 		{
 			for(i = 0; i < client.size(); i++)
@@ -142,14 +144,14 @@ public class OperationsOnClient implements ClientManagement {
 				if(client.get(i).getCode().equals(Code))
 				{
 					client.removeElementAt(i);
-					System.out.println("\n\t Client supprimer avec succès ! ");
+					System.out.println(color.purple+"\n\t  Well deleted ! "+color.reset);
 					break;
 				} 
 			}
 			
 			if(i.equals(client.size()))
 			{
-				System.out.println(" Pas de client trouver avec le code <" + Code +"> !");
+				System.out.println(color.red+"\t  Not found in Array ! "+color.reset);
 			}
 		}
 	}
